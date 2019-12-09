@@ -1,0 +1,3 @@
+﻿  polynom.cpp
+c:\yaimp\mp2-lab5-polynom\razzhivina\polynom\polynom.cpp(4): error C2512: Node<Monom>: нет подходящего конструктора по умолчанию
+  c:\yaimp\mp2-lab5-polynom\razzhivina\polynom\polynom.h(8): note:  см. объявление "Node<Monom>"
