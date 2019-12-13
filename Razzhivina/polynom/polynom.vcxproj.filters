@@ -24,9 +24,15 @@
     <ClInclude Include="Node.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
+    <ClInclude Include="instruction.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="polynom.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="sample.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
   </ItemGroup>

@@ -1,3 +1,25 @@
-﻿  polynom.cpp
-c:\yaimp\mp2-lab5-polynom\razzhivina\polynom\polynom.cpp(4): error C2512: Node<Monom>: нет подходящего конструктора по умолчанию
-  c:\yaimp\mp2-lab5-polynom\razzhivina\polynom\polynom.h(8): note:  см. объявление "Node<Monom>"
+﻿  sample.cpp
+c:\yaimp\mp2-lab5-polynom\razzhivina\polynom\polynom.h(20): error C2061: синтаксическая ошибка: идентификатор "pol_string"
+c:\yaimp\mp2-lab5-polynom\razzhivina\polynom\polynom.h(20): error C2535: Polynom::Polynom(void): функция-член уже определена или объявлена
+  c:\yaimp\mp2-lab5-polynom\razzhivina\polynom\polynom.h(18): note:  см. объявление "Polynom::Polynom"
+c:\yaimp\mp2-lab5-polynom\razzhivina\polynom\sample.cpp(12): error C2664: "Polynom::Polynom(const Polynom &)": невозможно преобразовать аргумент 1 из "pol_string" в "const Polynom &"
+  c:\yaimp\mp2-lab5-polynom\razzhivina\polynom\sample.cpp(12): note: Причина: невозможно преобразовать "pol_string" в "const Polynom"
+  c:\yaimp\mp2-lab5-polynom\razzhivina\polynom\sample.cpp(12): note: Для выполнения данного преобразования нет доступного оператора преобразования, определенного пользователем, или вызов оператора невозможен
+c:\yaimp\mp2-lab5-polynom\razzhivina\polynom\sample.cpp(18): error C2664: "Polynom::Polynom(const Polynom &)": невозможно преобразовать аргумент 1 из "pol_string" в "const Polynom &"
+  c:\yaimp\mp2-lab5-polynom\razzhivina\polynom\sample.cpp(18): note: Причина: невозможно преобразовать "pol_string" в "const Polynom"
+  c:\yaimp\mp2-lab5-polynom\razzhivina\polynom\sample.cpp(18): note: Для выполнения данного преобразования нет доступного оператора преобразования, определенного пользователем, или вызов оператора невозможен
+c:\yaimp\mp2-lab5-polynom\razzhivina\polynom\sample.cpp(26): error C2664: "Polynom::Polynom(const Polynom &)": невозможно преобразовать аргумент 1 из "pol_string" в "const Polynom &"
+  c:\yaimp\mp2-lab5-polynom\razzhivina\polynom\sample.cpp(26): note: Причина: невозможно преобразовать "pol_string" в "const Polynom"
+  c:\yaimp\mp2-lab5-polynom\razzhivina\polynom\sample.cpp(26): note: Для выполнения данного преобразования нет доступного оператора преобразования, определенного пользователем, или вызов оператора невозможен
+  polynom.cpp
+c:\yaimp\mp2-lab5-polynom\razzhivina\polynom\polynom.h(20): error C2061: синтаксическая ошибка: идентификатор "pol_string"
+c:\yaimp\mp2-lab5-polynom\razzhivina\polynom\polynom.h(20): error C2535: Polynom::Polynom(void): функция-член уже определена или объявлена
+  c:\yaimp\mp2-lab5-polynom\razzhivina\polynom\polynom.h(18): note:  см. объявление "Polynom::Polynom"
+c:\yaimp\mp2-lab5-polynom\razzhivina\polynom\polynom.cpp(28): error C2511: Polynom::Polynom(pol_string): перегруженная функция-член не найдена в "Polynom"
+  c:\yaimp\mp2-lab5-polynom\razzhivina\polynom\polynom.h(15): note:  см. объявление "Polynom"
+c:\yaimp\mp2-lab5-polynom\razzhivina\polynom\polynom.cpp(33): error C2597: недопустимая ссылка на нестатический член "Polynom::pFirst"
+c:\yaimp\mp2-lab5-polynom\razzhivina\polynom\polynom.cpp(76): error C2352: Polynom::Insert: недопустимый вызов нестатической функции-члена
+  c:\yaimp\mp2-lab5-polynom\razzhivina\polynom\polynom.h(33): note:  см. объявление "Polynom::Insert"
+c:\yaimp\mp2-lab5-polynom\razzhivina\polynom\polynom.cpp(78): error C2352: Polynom::Annul: недопустимый вызов нестатической функции-члена
+  c:\yaimp\mp2-lab5-polynom\razzhivina\polynom\polynom.h(34): note:  см. объявление "Polynom::Annul"
+  Создание кода...

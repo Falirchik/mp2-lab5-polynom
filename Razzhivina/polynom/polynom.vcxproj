@@ -19,12 +19,14 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="instruction.h" />
     <ClInclude Include="monom.h" />
     <ClInclude Include="Node.h" />
     <ClInclude Include="polynom.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="polynom.cpp" />
+    <ClCompile Include="sample.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
