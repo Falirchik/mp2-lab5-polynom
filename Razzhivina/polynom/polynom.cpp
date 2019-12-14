@@ -4,7 +4,7 @@
 Polynom::Polynom(){
 	Node *p = new Node;
 	p->coef = 0;
-	p->deg = 0;
+	p->deg = -1;
 	p->pNext = nullptr;
 	pFirst = p;
 }
@@ -13,7 +13,7 @@ Polynom::Polynom(const Polynom & pol){
 	Node* p = new Node;
 	pFirst = p;
 	p->coef = 0;
-	p->deg = 0;
+	p->deg = -1;
 	p->pNext = nullptr;
 	Node* pp = pol.pFirst->pNext;
 	for (pp; p != nullptr; pp = pp->pNext) {
@@ -25,10 +25,10 @@ Polynom::Polynom(const Polynom & pol){
 	}
 }
 
-Polynom::Polynom(pol_string _str){
+Polynom::Polynom(Pol_str _str){
 	Node* p = new Node;
 	p->coef = 0;
-	p->deg = 0;
+	p->deg = -1;
 	p->pNext = nullptr;
 	pFirst = p;
 	string s_tmp = _str.GetString() + '+';
@@ -56,7 +56,7 @@ Polynom::Polynom(pol_string _str){
 			y = 0,
 			z = 0;
 		for (int j = 0; j < 3; j++) {
-			switch (s_tmp[i]){
+			switch (s_tmp[i]) {
 			case 'x':
 				x = s_tmp[i + 1] - '0';
 				i = i + 2;
@@ -76,6 +76,8 @@ Polynom::Polynom(pol_string _str){
 	}
 	Annul();
 }
+
+
 
 Polynom::~Polynom(){
 	while (pFirst != nullptr) {
@@ -265,16 +267,16 @@ double Polynom::Calculation(double x, double y, double z){
 	return res;
 }
 
-bool pol_string::IsCorrect(){
+bool Pol_str::IsCorrect(){
 	int len = str.length();
 	if (len == 0)
 		return false;
 	int count = 0,
 		sim = 0,
-		k[3] = { 0,0,0 },
+		c[3] = { 0,0,0 },
 		f = 0;
 	str = str + '+';
-	string reasonable = "0123456789.-+xyz";
+	string reasonable = "xyz0123456789.-+";
 	if (str[0] == '.')
 		return false;
 	for (int i = 0; i < len; i++) {
@@ -282,12 +284,12 @@ bool pol_string::IsCorrect(){
 			return false;
 		for (int j = 0; j < 3; j++) {
 			if ((str[i] == reasonable[j]) && (f == 0)) {
-				if (k[j] == 1)
+				if (c[j] == 1)
 					return false;
-				k[j]++;
-				f = 1;
 				count = 0;
 				sim = 0;
+				c[j]++;
+				f = 1;
 				break;
 			}
 			if (f == 1) {
@@ -302,9 +304,9 @@ bool pol_string::IsCorrect(){
 		}
 		if ((str[i] == '+') || (str[i] == '-')) {
 			if (sim <= 0) {
-				k[0] = 0;
-				k[1] = 0;
-				k[2] = 0;
+				c[0] = 0;
+				c[1] = 0;
+				c[2] = 0;
 				sim++;
 			}
 			else return false;
@@ -325,12 +327,12 @@ bool pol_string::IsCorrect(){
 	return true;
 }
 
-pol_string::pol_string(string _str){
-	if (!IsCorrect())
-		throw "ошибка: неверный полином";
-	
+Pol_str::Pol_str(string _str){
+		
 	int tmp = _str.length();
 	for (int i = 0; i < tmp; i++)
 		if (_str[i] != ' ')
 			str += _str[i];
+	if (!IsCorrect())
+		throw "ошибка: неверный полином";
 }

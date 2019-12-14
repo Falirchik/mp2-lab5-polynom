@@ -18,12 +18,6 @@
     <ClInclude Include="polynom.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="monom.h">
-      <Filter>Файлы заголовков</Filter>
-    </ClInclude>
-    <ClInclude Include="Node.h">
-      <Filter>Файлы заголовков</Filter>
-    </ClInclude>
     <ClInclude Include="instruction.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>

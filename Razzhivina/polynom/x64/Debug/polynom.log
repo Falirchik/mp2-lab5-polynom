@@ -1,0 +1,9 @@
+﻿  sample.cpp
+  polynom.cpp
+c:\yaimp\mp2-lab5-polynom\razzhivina\polynom\polynom.cpp(37): warning C4267: инициализация: преобразование из "size_t" в "int"; возможна потеря данных
+c:\yaimp\mp2-lab5-polynom\razzhivina\polynom\polynom.cpp(42): warning C4267: инициализация: преобразование из "size_t" в "int"; возможна потеря данных
+c:\yaimp\mp2-lab5-polynom\razzhivina\polynom\polynom.cpp(271): warning C4267: инициализация: преобразование из "size_t" в "int"; возможна потеря данных
+c:\yaimp\mp2-lab5-polynom\razzhivina\polynom\polynom.cpp(332): warning C4267: инициализация: преобразование из "size_t" в "int"; возможна потеря данных
+  Создание кода...
+c:\yaimp\mp2-lab5-polynom\razzhivina\polynom\polynom.cpp(121): warning C4717: Polynom::operator+: рекурсия на всех путях выполнения, функция вызовет переполнение стека
+  polynom.vcxproj -> C:\YaiMP\mp2-lab5-polynom\Razzhivina\x64\Debug\polynom.exe
