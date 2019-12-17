@@ -20,10 +20,13 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="instruction.h" />
-    <ClInclude Include="polynom.h" />
+    <ClInclude Include="list.h" />
+    <ClInclude Include="monom.h" />
+    <ClInclude Include="polinom.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="polynom.cpp" />
+    <ClCompile Include="monom.cpp" />
+    <ClCompile Include="polinom.cpp" />
     <ClCompile Include="sample.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
