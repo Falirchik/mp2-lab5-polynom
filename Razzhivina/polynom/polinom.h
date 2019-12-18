@@ -1,6 +1,7 @@
 #pragma once
 #include "list.h"
 #include "monom.h"
+#include <sstream>
 
 class Polinom {
 	List <Monom> Pol;
@@ -23,4 +24,7 @@ public:
 	Polinom operator-(Polinom& _pl);
 	Polinom operator*(Polinom& _pl);
 	Polinom operator*(double C);
+
+	string Insc(double c) { ostringstream oss; oss << c; return oss.str(); }
+	string GetPolinom();
 };

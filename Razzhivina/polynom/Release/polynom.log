@@ -1,7 +1,9 @@
-﻿  sample.cpp
+﻿  polinom.cpp
+  polinom_sample.cpp
   Создание кода
-  1 of 188 functions ( 0.5%) were compiled, the rest were copied from previous compilation.
-    0 functions were new in current compilation
-    1 functions had inline decision re-evaluated but remain unchanged
+c:\yaimp\mp2-lab5-polynom\razzhivina\polynom\monom.cpp(70): warning C4172: возвращение адреса локальной или временной переменной : tmp
+  221 of 221 functions (100.0%) were compiled, the rest were copied from previous compilation.
+    102 functions were new in current compilation
+    0 functions had inline decision re-evaluated but remain unchanged
   Создание кода завершено
   polynom.vcxproj -> C:\YaiMP\mp2-lab5-polynom\Razzhivina\Release\polynom.exe

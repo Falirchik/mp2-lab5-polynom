@@ -128,6 +128,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="test_main.cpp" />
+    <ClCompile Include="test_monom.cpp" />
     <ClCompile Include="test_polinom.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

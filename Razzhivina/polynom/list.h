@@ -15,7 +15,12 @@ class List {
 		*pFict,					//фиктивное для работы
 		*pCurr;					//текущее
 public:
-	List() :pFirst(nullprt), pLast(nullptr), pCurr(nullptr) {};
+	List() { 
+		pFirst = nullptr;
+		pLast = nullptr;
+		pCurr = nullptr;
+		pFict = nullptr;
+	};
 	List(const List<T> &_l);
 	~List() { DelAll(); };
 
@@ -48,7 +53,7 @@ inline List<T>::List(const List<T>& _l){
 	pCurr = nullptr;
 	pLast = nullptr;
 	Node *tmp = _l.pFict;
-	InFict(tmp.data);
+	InFict(tmp->data);
 	if (_l.pFirst != nullptr)
 		tmp = tmp->pNext;
 	for (tmp; (tmp != _l.pFict) && (tmp != nullptr); tmp = tmp->pNext)
@@ -113,7 +118,7 @@ template<class T>
 inline void List<T>::InFirst(T _data){
 	Node *p = new Node;
 	p->data = _data;
-	if (!Empty()) {
+	if (!IsEmpty()) {
 		p->pNext = pFirst;
 		p->pPrev = pFict;
 		pFirst->pPrev = p;
@@ -136,7 +141,7 @@ template<class T>
 inline void List<T>::InLast(T _data){
 	Node *p = new Node;
 	p->data = _data;
-	if (!Empty()) {
+	if (!IsEmpty()) {
 		pLast->pNext = p;
 		pFict->pPrev = p;
 		p->pPrev = pLast;

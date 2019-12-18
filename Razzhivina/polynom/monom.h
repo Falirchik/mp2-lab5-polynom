@@ -22,7 +22,6 @@ public:
 
 	void Clean() { coef = degX = degY = degZ = 0; }
 	void SetCoef(double _coef) { coef = _coef; };
-	void SetDegs(int _degs);
 	void SetData(double _coef, int dX, int dY, int dZ);
 
 	bool operator== (const Monom& _m);
@@ -32,14 +31,5 @@ public:
 	bool LikeMonom(const Monom& _m);
 
 	Monom& operator=(const Monom& _m);
-	Monom& operator+(const Monom& _m);
-	Monom& operator-(const Monom& _m);
-	Monom& operator*(const Monom& _m);
-	Monom& operator*(const double c);
-	Monom& operator+=(const Monom& _m);
-	Monom& operator*=(const Monom& _m);
-	Monom& operator-=(const Monom& _m);
-	
-	friend ostream& operator<<(ostream& ostr, const Monom& _m);
-	friend istream& operator>>(istream& istr, const Monom& _m);
+	Monom& operator*(const Monom& _m);	
 };

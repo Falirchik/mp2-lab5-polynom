@@ -15,9 +15,6 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="instruction.h">
-      <Filter>Файлы заголовков</Filter>
-    </ClInclude>
     <ClInclude Include="monom.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
@@ -27,15 +24,18 @@
     <ClInclude Include="polinom.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
+    <ClInclude Include="instruction and menu.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="sample.cpp">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
     <ClCompile Include="monom.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
     <ClCompile Include="polinom.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="polinom_sample.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
   </ItemGroup>

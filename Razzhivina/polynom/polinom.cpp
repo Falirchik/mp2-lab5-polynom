@@ -1,7 +1,7 @@
 #include "polinom.h"
-#include <math>
+//#include <math>
 
-using namespace std;
+//using namespace std;
 
 void Polinom::StringToPolinom(string _pol){
 	Pol.DelAll();
@@ -88,7 +88,7 @@ void Polinom::Sorting(){
 	double pCoef;
 	for (; !Pol.IsEnd();) {
 		tmp_m = Pol.GetData();
-		if (!tmp_p.Pol.IsEmpty) {
+		if (!(tmp_p.Pol.IsEmpty())) {
 			if (!tmp_p.Pol.IsEmpty()) {
 				tmp_p.Pol.CurrInFirst();
 				Monom tmp_mm = tmp_p.Pol.GetData();
@@ -105,7 +105,7 @@ void Polinom::Sorting(){
 					pCoef = tmp_mm.GetCoef() + tmp_m.GetCoef();
 					tmp_m.SetCoef(pCoef);
 					tmp_p.Pol.SetData(tmp_m);
-					Pol.DelFirst;
+					Pol.DelFirst();
 				}
 				else if (tmp_p.Pol.IsEnd()) {
 					tmp_p.Pol.InLast(tmp_m);
@@ -216,29 +216,123 @@ void Polinom::Sorting(){
 			tmp = Pol.GetData();
 			_coef = tmp.GetCoef();
 			dx = tmp.GetDegX();
-			dy = tmp.GetDegY;
+			dy = tmp.GetDegY();
 			dz = tmp.GetDegZ();
 			res += (_coef*pow(X, dx)*pow(Y, dy)*pow(Z, dz));
 		}
 		return res;
 	}
 
-	Polinom Polinom::operator+(Polinom & _pl)
-	{
-		return Polinom();
+	Polinom Polinom::operator+(Polinom & _pl){
+		Monom tmp_m1, tmp_m2;
+		Polinom res("");
+		double _coef;
+		Pol.CurrInFirst();
+		_pl.Pol.CurrInFirst();
+		while (!Pol.IsEnd()) {
+			tmp_m1 = Pol.GetData();
+			tmp_m2 = _pl.Pol.GetData();
+			if (tmp_m1.LikeMonom(tmp_m2)) {
+				_coef = tmp_m1.GetCoef() + tmp_m2.GetCoef();
+				if (_coef != 0) {
+					tmp_m1.SetCoef(_coef);
+					res.Pol.InLast(tmp_m1);
+				}
+				Pol.StepForward();
+				_pl.Pol.StepForward();
+			}
+			else if (tmp_m2 > tmp_m1) {
+				res.Pol.InLast(tmp_m2);
+				_pl.Pol.StepForward();
+			}
+			else {
+				res.Pol.InLast(tmp_m1);
+				Pol.StepForward();
+			}
+		}
+		for (; !_pl.Pol.IsEnd();) {//полиному во втором мономе?
+			res.Pol.InLast(tmp_m2);
+			_pl.Pol.StepForward();
+			tmp_m2 = _pl.Pol.GetData();
+		}
+		return res;
+		
 	}
 
-	Polinom Polinom::operator-(Polinom & _pl)
-	{
-		return Polinom();
+	Polinom Polinom::operator-(Polinom & _pl)	{
+		Polinom tmp1 = *this,
+			tmp2 = _pl*(-1);
+		tmp1 = tmp1 + tmp2;
+		return tmp1;
 	}
 
-	Polinom Polinom::operator*(Polinom & _pl)
-	{
-		return Polinom();
+	Polinom Polinom::operator*(Polinom & _pl){
+		Polinom res("");
+		_pl.Pol.CurrInFirst();
+		Pol.CurrInFirst();
+		Monom tmp1, tmp2, tmp3;
+		while (!Pol.IsEnd()) {
+			tmp1 = Pol.GetData();
+			while (!_pl.Pol.IsEnd()) {
+				tmp2 = _pl.Pol.GetData();
+				tmp3 = tmp1 * tmp2;
+				res.Pol.InLast(tmp3);
+				_pl.Pol.StepForward();
+			}
+			_pl.Pol.CurrInFirst();
+			Pol.StepForward();
+		}
+		res.Sorting();
+		return res;
 	}
 
-	Polinom Polinom::operator*(double C)
-	{
-		return Polinom();
+	Polinom Polinom::operator*(double C){
+		Polinom tmp_p = *this;
+		double _coef;
+		Monom tmp_m;
+		while (!tmp_p.Pol.IsEnd()) {
+			tmp_m = tmp_p.Pol.GetData();
+			_coef = C * tmp_m.GetCoef();
+			tmp_m.SetCoef(_coef);
+			tmp_p.Pol.SetData(tmp_m);
+		}
+		return tmp_p;
+	}
+
+	string Polinom::GetPolinom(){
+		string res = "";
+		int x, y, z;
+		double _coef;
+		Monom tmp_m;
+		if (!Pol.IsEmpty()) {
+			for (Pol.CurrInFirst(); !Pol.IsEnd(); Pol.StepForward()) {
+				tmp_m = Pol.GetData();
+				_coef = tmp_m.GetCoef();
+				x = tmp_m.GetDegX();
+				y = tmp_m.GetDegY();
+				z = tmp_m.GetDegZ();
+				if (_coef > 0) 
+					res += '+';
+				string mon = "";
+				if ((x == 0) && (y != 0) && (z != 0))
+					mon = Insc(_coef) + "y^" + Insc(y) + "z^" + Insc(z);
+				else if ((x != 0) && (y == 0) && (z != 0))
+					mon = Insc(_coef) + "x^" + Insc(x) + "z^" + Insc(z);
+				else if ((x != 0) && (y != 0) && (z == 0))
+					mon = Insc(_coef) + "x^" + Insc(x) + "y^" + Insc(y);
+				else if ((x == 0) && (y == 0) && (z != 0))
+					mon = Insc(_coef) + "z^" + Insc(z);
+				else if ((x != 0) && (y == 0) && (z == 0))
+					mon = Insc(_coef) + "x^" + Insc(x);
+				else if ((x == 0) && (y != 0) && (z == 0))
+					mon = Insc(_coef) + "y^" + Insc(y);
+				else if((x != 0) && (y != 0) && (z != 0))
+					mon= Insc(_coef) + "x^" + Insc(x) + "y^" + Insc(y) + "z^" + Insc(z);
+				else if ((x == 0) && (y == 0) && (z == 0))
+					mon = Insc(_coef);
+				res += mon;
+			}
+		}
+
+		return res;
 	}
