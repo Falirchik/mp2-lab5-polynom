@@ -23,7 +23,7 @@ void Polinom::StringToPolinom(string _pol){
 			if (_pol[i] == '-')
 				sign = -1;
 		}
-		while ((IsNum(_pol[i])) && (i, size)) {
+		while ((IsNum(_pol[i])) && (i< size)) {
 			tmp += _pol[i];
 			i++;
 		}
@@ -69,9 +69,9 @@ void Polinom::StringToPolinom(string _pol){
 				continue;
 			}
 			}
-		if (tmp != "")
-			coef = sign * stoi(tmp);
-		else coef = 1 * sign;
+		if (tmp == "")
+			coef = 1 * sign;
+		else  coef = sign * stoi(tmp);
 		tmp_m.SetData(coef, degX, degY, degZ);
 		if (!Pol.IsEmpty())
 			Pol.InLast(tmp_m);

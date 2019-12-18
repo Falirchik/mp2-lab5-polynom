@@ -36,6 +36,7 @@ void WorkMenu() {
 	while (point != 10) {
 		cin >> point;
 		switch (point) {
+		default: break;
 		case 0: {
 			PrintMenu();
 			break; 
