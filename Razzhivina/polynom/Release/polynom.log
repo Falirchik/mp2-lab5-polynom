@@ -1,0 +1,8 @@
+﻿  monom.cpp
+  polinom.cpp
+  polinom_sample.cpp
+  Создание кода
+c:\yaimp\mp2-lab5-polynom\razzhivina\polynom\monom.cpp(70): warning C4172: возвращение адреса локальной или временной переменной : tmp
+  All 220 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  Создание кода завершено
+  polynom.vcxproj -> C:\YaiMP\mp2-lab5-polynom\Razzhivina\Release\polynom.exe

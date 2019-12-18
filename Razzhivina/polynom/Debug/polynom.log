@@ -1,0 +1,6 @@
+﻿C:\Program Files (x86)\Microsoft Visual Studio\2017\Enterprise\Common7\IDE\VC\VCTargets\Microsoft.CppClean.targets(76,5): warning : Отказано в доступе по пути "c:\yaimp\mp2-lab5-polynom\razzhivina\debug\polynom.exe".
+  sample.cpp
+  polynom.cpp
+  Создание кода...
+c:\yaimp\mp2-lab5-polynom\razzhivina\polynom\polynom.cpp(121): warning C4717: Polynom::operator+: рекурсия на всех путях выполнения, функция вызовет переполнение стека
+LINK : fatal error LNK1104: не удается открыть файл "C:\YaiMP\mp2-lab5-polynom\Razzhivina\Debug\polynom.exe"
